@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var coffee = require('gulp-coffee');
 var gutil = require('gulp-util');
+var slim = require("gulp-slim");
 
 
 gulp.task('sass', function () {
@@ -22,6 +23,14 @@ gulp.task('coffee', function() {
 
 gulp.task('sass:watch', function () {
     gulp.watch('sass/*.scss', ['sass']);
+});
+
+gulp.task('slim', function(){
+    gulp.src("./src/slim/*.slim")
+        .pipe(slim({
+            pretty: true
+        }))
+        .pipe(gulp.dest("./dist/html/"));
 });
 
 gulp.task('default', function() {
