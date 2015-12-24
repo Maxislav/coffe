@@ -26,11 +26,11 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('slim', function(){
-    gulp.src("./src/slim/*.slim")
+    gulp.src("slim/*.slim")
         .pipe(slim({
             pretty: true
         }))
-        .pipe(gulp.dest("./dist/html/"));
+        .pipe(gulp.dest("app"));
 });
 
 gulp.task('default', function() {
