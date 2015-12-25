@@ -1,14 +1,18 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
+.text-right {
+  text-align: right; }
 
-body {
-  background: #d8d8d8;
-  height: 100%; }
-
-html {
-  height: 100%; }
+.button {
+  padding: 8px 15px;
+  border: 1px solid #c1c1c1;
+  border-radius: 3px;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  min-width: 100px;
+  cursor: pointer;
+  background-color: white; }
+  .button:active {
+    box-shadow: none;
+    color: gray; }
 
 .width-100 {
   width: 100%; }
@@ -31,10 +35,22 @@ html {
   float: right; }
 
 .border {
-  border: 2px solid #728598; }
+  border: 2px solid #c1c1c1; }
 
 .inline-block {
   display: inline-block; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #d8d8d8;
+  height: 100%; }
+
+html {
+  height: 100%; }
 
 .week {
   height: 100%;
@@ -44,11 +60,3 @@ html {
 
 .container-buttons {
   margin-bottom: 8px; }
-
-.button {
-  padding: 8px 15px;
-  border: 1px solid gray;
-  border-radius: 2px;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  min-width: 100px; }

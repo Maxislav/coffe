@@ -17,10 +17,10 @@ gulp.task('coffee', function() {
         .pipe(gulp.dest('build'));
 });
 
-
 gulp.task('coffee:watch', function(){
     gulp.watch(['app/*.coffee', 'app/**/*.coffee'], ['coffee']);
-})
+});
+
 gulp.task('sass', function () {
     gulp.src('sass/*.scss')
         .pipe(sass().on('error', sass.logError))
@@ -30,9 +30,7 @@ gulp.task('sass', function () {
 gulp.task('sass:watch', function () {
     gulp.watch('sass/*.scss', ['sass']);
 });
-/*gulp.task('slim:watch', function () {
-    gulp.watch('sass*//*.scss', ['sass']);
-});*/
+
 
 gulp.task('slim', function(){
     gulp.src("app/templates/*.slim")
@@ -42,8 +40,6 @@ gulp.task('slim', function(){
         .pipe(gulp.dest("build"));
 });
 
-
-
 gulp.task('slim:watch', function () {
     gulp.watch([
         'app/**/*.slim',
@@ -52,6 +48,12 @@ gulp.task('slim:watch', function () {
 });
 
 
-gulp.task('default', function() {
+gulp.task('defaultff', function() {
+
     gulp.run('coffee','grunt-tags', 'grunt-slim', 'sass', 'sass:watch', 'slim:watch', 'coffee:watch');
+});
+
+
+gulp.task('default', ['grunt-tags'], function(){
+    gulp.run('coffee', 'grunt-slim', 'sass', 'sass:watch', 'slim:watch', 'coffee:watch');
 });
