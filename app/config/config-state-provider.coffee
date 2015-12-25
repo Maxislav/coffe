@@ -8,12 +8,12 @@ angular.module('app')
     );
 
     $stateProvider
-    .state( "olol", {
-          url: "/olol",
-          template: '<div class="week"></div>',
+    .state( "main", {
+          url: "/main",
+          templateUrl: 'build/templates/ui-view-main.html',
           controller: ($scope)->
         } )
-    .state('week', {
+    .state('main.week', {
           url: '/week/:week',
           views: {
             main: {

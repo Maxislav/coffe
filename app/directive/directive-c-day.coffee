@@ -3,4 +3,6 @@ angular.module('app')
   {
     link: (scope, el, attr) ->
       console.log(el)
+
+      undefined
   }

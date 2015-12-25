@@ -48,11 +48,6 @@ gulp.task('slim:watch', function () {
 });
 
 
-gulp.task('defaultff', function() {
-
-    gulp.run('coffee','grunt-tags', 'grunt-slim', 'sass', 'sass:watch', 'slim:watch', 'coffee:watch');
-});
-
 
 gulp.task('default', ['grunt-tags'], function(){
     gulp.run('coffee', 'grunt-slim', 'sass', 'sass:watch', 'slim:watch', 'coffee:watch');
