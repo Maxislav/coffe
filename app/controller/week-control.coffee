@@ -2,10 +2,14 @@ angular.module('app')
 .controller 'weekControl', [
   '$scope',
   '$stateParams',
+  '$state',
   ($scope,
-   $stateParams) ->
+   $stateParams,
+   $state) ->
     $scope.next = ()->
-      console.log('next')
+      $stateParams.week++
+      $state.go('main.week', $stateParams)
+      console.log($stateParams)
 
     $scope.prev = ()->
       console.log('prev')
