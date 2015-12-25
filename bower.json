@@ -1,0 +1,12 @@
+{
+    "name": "coffee-pos",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "angular": "~1.4.*",
+        "angular-animate": "~1.4.*",
+        "angular-cookies": "~1.4.*",
+        "angular-ui-router": "~0.2.11",
+        "angular-translate": "~2.5"
+    }
+}
