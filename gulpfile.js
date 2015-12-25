@@ -46,7 +46,7 @@ gulp.task('slim', function(){
 
 gulp.task('slim:watch', function () {
     gulp.watch([
-        'slim/*.slim',
+        'app/**/*.slim',
         'index.slim'
     ], ['grunt-slim']);
 });
