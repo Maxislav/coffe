@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "description": "coffe test",
   "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-slim": "^0.1.0",
     "gulp-coffee": "^2.3.1",
     "gulp-coffeelint": "^0.6.0",
+    "gulp-grunt": "^0.5.3",
     "gulp-sass": "^2.1.1",
     "gulp-slim": "^0.3.0",
     "gulp-util": "^3.0.7"
