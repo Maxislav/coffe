@@ -24,7 +24,10 @@ module.exports = function (grunt) {
             devLogin: {
                 src: [
                     'bower_components/angular/angular.min.js',
-                    'build/*.js'
+                    'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+                    'bower_components/angular-animate/angular-animate.min.js',
+                    'build/**/*.js',
+                    'build/*.css'
                 ],
                 options: {
                     openTag: '/ start auto template tags',

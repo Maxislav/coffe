@@ -9,16 +9,21 @@ var slim = require("gulp-slim");
 require('gulp-grunt')(gulp);
 
 
-gulp.task('sass', function () {
-    gulp.src('sass/*.scss')
-        .pipe(sass().on('error', sass.logError))
+
+
+gulp.task('coffee', function() {
+    gulp.src(['app/*.coffee', 'app/**/*.coffee'])
+        .pipe(coffee({bare: true}).on('error', gutil.log))
         .pipe(gulp.dest('build'));
 });
 
 
-gulp.task('coffee', function() {
-    gulp.src('app/*.coffee')
-        .pipe(coffee({bare: true}).on('error', gutil.log))
+gulp.task('coffee:watch', function(){
+    gulp.watch(['app/*.coffee', 'app/**/*.coffee'], ['coffee']);
+})
+gulp.task('sass', function () {
+    gulp.src('sass/*.scss')
+        .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('build'));
 });
 
@@ -37,11 +42,7 @@ gulp.task('slim', function(){
         .pipe(gulp.dest("build"));
 });
 
-/*
-gulp.task('default', function() {
-    gulp.run('sass', 'sass:watch');
-});
-*/
+
 
 gulp.task('slim:watch', function () {
     gulp.watch([
@@ -52,5 +53,5 @@ gulp.task('slim:watch', function () {
 
 
 gulp.task('default', function() {
-    gulp.run('grunt-tags','grunt-slim', 'slim:watch');
+    gulp.run('coffee','grunt-tags', 'grunt-slim', 'sass', 'sass:watch', 'slim:watch', 'coffee:watch');
 });
