@@ -15,19 +15,62 @@ html{
 
 .week{
   height: 100%;
-  padding: 20px 20px;
+  padding: 8px;
   .times{
     min-width: 100px;
   }
   .day{
     @extend .width-day;
     float:left;
+    &>div:not(:last-child){
+      border-right: 1px solid $color-border;
+    }
+    .day-title{
+      top: -15px;
+      width: 100%;
+      text-align: center;
+      &>div{
+        padding: 5px 15px;
+        background: white;
+        border-radius: $radius-form;
+        box-shadow: -5px 0 5px white, -10px 0 5px rgba(255,255,255,0.5), 5px 0  5px white, 10px 0  5px rgba(255,255,255,0.5);
+      }
+     /* &.current>div{
+        background-color: $color-background-day;
+      }*/
+    }
+  }
+  .day:not(:last-child)>div{
+    border-right: 1px solid $color-border;
+  }
+  .time-container{
+    padding: 5px;
     &>div{
-      border: 1px solid $color-border;
+      background: white;
+      height: 100%;
+      border-radius: $radius-form;
+      box-shadow: 0 0 2px white;
+      /*&.current{
+        background-color: $color-background-day;
+      }*/
     }
   }
 }
 .container-buttons{
-  margin-bottom: 8px;
+  margin-bottom: 15px;
+}
+.day-title.current {
+  color: #ff6100;
+
 }
 
+.times{
+  padding: 7px;
+  &>div{
+    height: 100%;
+    background: white;
+    &>div{
+      left:5px;
+    }
+  }
+}

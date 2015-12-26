@@ -2,6 +2,7 @@ $color-border: #c1c1c1;
 $radius-form: 3px;
 $shadow-form: 2px 5px  5px rgba(0,0,0,0.3);
 $color-button: white;
+$color-background-day: rgb(252, 255, 230);
 
 .text-right{
   text-align: right;
@@ -51,4 +52,12 @@ $color-button: white;
 }
 .inline-block{
   display: inline-block;
+}
+.relative{
+  position: relative;
+}
+.absolute{
+  position: absolute;
+  left: 0;
+  top: 0;
 }

@@ -11,6 +11,9 @@ div class="week"
 
 	div class="table width-100 height-100"
 		div class="table-cell height-100 times"
-			div ng-repeat="time in times"
+			div class="relative"
+				div ng-repeat="time in times" class="absolute" style="top: {{time.index*100/24 + '%'}}"
+					| {{time.value}}
+
 		div class="table-cell border height-100 width-100"
 			div ui-view="main" class="anim-in-out height-100"

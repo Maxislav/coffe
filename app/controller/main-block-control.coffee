@@ -3,9 +3,11 @@ angular.module('app')
   '$scope',
   '$stateParams',
   '$state',
+    'factoryTime',
   ($scope,
    $stateParams,
-   $state) ->
+   $state,
+   factoryTime) ->
     $scope.next = ()->
       $stateParams.week++
       $state.go('main.week', $stateParams)
@@ -13,6 +15,10 @@ angular.module('app')
     $scope.prev = ()->
       $stateParams.week--
       $state.go('main.week', $stateParams)
-      undefined
+
+
+    $scope.times = factoryTime.times
+    return
+
 
 ]
