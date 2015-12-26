@@ -1,4 +1,4 @@
-angular.module('app').directive 'cMission', (factoryLocalStorage) ->
+angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog) ->
   {
   restrict: 'A',
   require: '?^cDay'
@@ -11,7 +11,38 @@ angular.module('app').directive 'cMission', (factoryLocalStorage) ->
 
     el.css('top', Math.round(perc*100)/100 + '%' )
 
-   # console.log cdsy.getDate()
+    dialogShow = ()->
+      content = angular.copy(scope[attr.cMission])
+      serviceDialog.add
+        templateUrl: 'build/templates/dialog/dialog-base.html'
+        title: 'Редактировать событие'
+        content: content
+        buttons: [
+          {
+            class: 'primary'
+            text: 'OK'
+            action: (d)->
+              save
+                dayDate: scope[attr.cDay].date.getTime()
+                dayDateString: $filter('date')(scope[attr.cDay].date, 'dd.MM.yyyy')
+                title: this.content.title
+                description: this.content.description
+                from: this.content.from
+                to: this.content.to
+
+              return
+          }
+          {text: 'Cancel'}
+        ]
+      scope.$apply();
+      # console.log serviceDialog
+      return
+
+
+    el.on 'click', dialogShow
+    scope.$on '$destroy', ->
+      el.off 'click', dialogShow
+      return
 
     return
   }

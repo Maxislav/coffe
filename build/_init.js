@@ -1,1 +1,1 @@
-angular.module('app', ['ngAnimate', 'ui.router', 'lv.dialog', 'LocalStorageModule']);
+angular.module('app', ['ngAnimate', 'ui.router', 'lv.valid', 'lv.dialog', 'LocalStorageModule']);

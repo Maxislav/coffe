@@ -17,8 +17,21 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
       factoryLocalStorage.setStorage(scope[attr.cDay])
       return
 
+    ifNeeded = (target)->
+      k=false
+      a = (_el)->
+        if _el.parentNode and _el != el[0]
+          if !angular.element(_el).hasClass('time-in-day')
+            a(_el.parentNode)
 
-    dialogShow = ->
+        else if _el == el[0]
+          k = true
+      a(target)
+      k
+
+    dialogShow = (e)->
+      if !ifNeeded(e.target)
+        return
       serviceDialog.add
         templateUrl: 'build/templates/dialog/dialog-base.html'
         title: 'Создать событие'
