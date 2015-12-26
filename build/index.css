@@ -136,6 +136,12 @@ input, textarea {
         border-radius: 3px;
         box-shadow: 0 0 2px white;
         box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3); }
+    .week .day .mission {
+      min-height: 20px;
+      padding: 5px;
+      border-radius: 3px;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+      width: 100%; }
   .week .day:not(:last-child) > div {
     border-right: 1px solid #c1c1c1; }
   .week .time-container {
@@ -148,6 +154,8 @@ input, textarea {
       /*&.current{
         background-color: $color-background-day;
       }*/ }
+    .week .time-container .time-in-day {
+      width: 100%; }
 
 .container-buttons {
   margin-bottom: 30px; }

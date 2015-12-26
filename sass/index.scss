@@ -49,6 +49,13 @@ input, textarea{
         background-color: $color-background-day;
       }*/
     }
+    .mission{
+      min-height: 20px;
+      padding: 5px;
+      border-radius: $radius-form;
+      box-shadow: $shadow-form;
+      width: 100%;
+    }
   }
   .day:not(:last-child)>div{
     border-right: 1px solid $color-border;
@@ -63,6 +70,9 @@ input, textarea{
       /*&.current{
         background-color: $color-background-day;
       }*/
+    }
+    .time-in-day{
+      width: 100%;
     }
   }
 }

@@ -27,7 +27,8 @@ module.exports = function (grunt) {
                     'bower_components/angular-ui-router/release/angular-ui-router.min.js',
                     'bower_components/angular-animate/angular-animate.min.js',
                     'build/**/*.js',
-                    'module/lv-dialog/*.js',
+                    'module/**/_*.js',
+                    'module/**/*.js',
                     'build/*.css'
                 ],
                 options: {
