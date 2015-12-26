@@ -1,6 +1,9 @@
 .text-right {
   text-align: right; }
 
+.select {
+  color: darkred; }
+
 .button {
   padding: 8px 15px;
   border: 1px solid #c1c1c1;
@@ -17,7 +20,7 @@
 .width-100 {
   width: 100%; }
 
-.width-day {
+.width-day, .week .day {
   width: 14.28%; }
 
 .height-100 {
@@ -57,6 +60,10 @@ html {
   padding: 20px 20px; }
   .week .times {
     min-width: 100px; }
+  .week .day {
+    float: left; }
+    .week .day > div {
+      border: 1px solid #c1c1c1; }
 
 .container-buttons {
   margin-bottom: 8px; }

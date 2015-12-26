@@ -1,6 +1,6 @@
 angular.module('app').controller('weekControl', [
-  '$scope', '$stateParams', '$state', function($scope, $stateParams, $state) {
-    $scope.week = $stateParams.week;
-    return console.log($stateParams.week);
+  '$scope', '$stateParams', '$state', 'factoryWeek', function($scope, $stateParams, $state, factoryWeek) {
+    $scope.week = factoryWeek.getWeek($stateParams.week);
+    console.log($scope.week);
   }
 ]);

@@ -1,2 +1,5 @@
-div
-  | неделя {{week}}
+div class="height-100"
+	div ng-repeat="day in week" class="day height-100"
+		div class="height-100"
+			div ng-class="{select: day.current}"
+				| {{day.date | date:"dd.MM.yyyy"}}

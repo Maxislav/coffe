@@ -19,6 +19,13 @@ html{
   .times{
     min-width: 100px;
   }
+  .day{
+    @extend .width-day;
+    float:left;
+    &>div{
+      border: 1px solid $color-border;
+    }
+  }
 }
 .container-buttons{
   margin-bottom: 8px;

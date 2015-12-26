@@ -3,10 +3,14 @@ angular.module('app')
   '$scope',
   '$stateParams',
   '$state',
+  'factoryWeek',
   ($scope,
    $stateParams,
-   $state) ->
-    $scope.week = $stateParams.week
-    console.log($stateParams.week)
+   $state,
+   factoryWeek) ->
+    $scope.week = factoryWeek.getWeek($stateParams.week)
+
+    console.log $scope.week
+    return
 
 ]
