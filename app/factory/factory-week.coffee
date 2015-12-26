@@ -1,8 +1,17 @@
-angular.module('app').factory 'factoryWeek', ->
+angular.module('app').factory 'factoryWeek',(factoryLocalStorage) ->
   createWeek = undefined
   getDays = undefined
   getWeek = undefined
   weeks = undefined
+  missions = factoryLocalStorage.getMissions()
+  #console.log
+
+  detMissions = (val)->
+    if missions[val]
+      missions[val].times
+    else
+      []
+
 
   getDate = (n) ->
     d = new Date();
@@ -26,12 +35,13 @@ angular.module('app').factory 'factoryWeek', ->
       days.push {
         date:getDate(day+(7*n)),
         current: day+(7*n) == 0,
-        times: []
+        times: detMissions(getDate(day+(7*n)).getTime())
       }
       day++
       i++
-
+    console.log ( days)
     weeks[n]=days
+
 
   getWeek = (n) ->
     weeks[n] or createWeek(n)

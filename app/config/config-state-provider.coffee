@@ -4,7 +4,7 @@ angular.module('app')
 
     $urlRouterProvider
     .otherwise( ($injector, $location) ->
-           'main/week/0'
+           'main/0'
     );
 
     $stateProvider

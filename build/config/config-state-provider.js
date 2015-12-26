@@ -1,6 +1,6 @@
 angular.module('app').config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise(function($injector, $location) {
-    return 'main/week/0';
+    return 'main/0';
   });
   $stateProvider.state("main", {
     url: "/main",

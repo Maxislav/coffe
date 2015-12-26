@@ -1,3 +1,4 @@
 angular.module('app', ['ngAnimate',
                        'ui.router',
-                       'lv.dialog'])
+                       'lv.dialog',
+                       'LocalStorageModule'])
