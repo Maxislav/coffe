@@ -1,4 +1,5 @@
 @import "constant";
+@import "../module/lv-dialog/lv-dialog";
 *{
   margin:0;
   padding: 0;
@@ -7,9 +8,16 @@
 body{
   background: #d8d8d8;
   height: 100%;
+  font-family: $font-family;
 }
 html{
   height: 100%;
+}
+input, textarea{
+  outline: none;
+  padding: 5px 8px;
+  border: 1px solid $color-border;
+  border-radius: $radius-form;
 }
 
 
@@ -29,11 +37,13 @@ html{
       top: -15px;
       width: 100%;
       text-align: center;
+      z-index: 5;
       &>div{
         padding: 5px 15px;
         background: white;
         border-radius: $radius-form;
-        box-shadow: -5px 0 5px white, -10px 0 5px rgba(255,255,255,0.5), 5px 0  5px white, 10px 0  5px rgba(255,255,255,0.5);
+        box-shadow: 0 0 2px white;
+        box-shadow: $shadow-form;
       }
      /* &.current>div{
         background-color: $color-background-day;
@@ -44,7 +54,7 @@ html{
     border-right: 1px solid $color-border;
   }
   .time-container{
-    padding: 5px;
+    padding: 2px;
     &>div{
       background: white;
       height: 100%;
@@ -57,17 +67,17 @@ html{
   }
 }
 .container-buttons{
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .day-title.current {
   color: #ff6100;
 }
 
 .times{
-  padding: 7px;
+  padding: 4px;
   &>div{
     height: 100%;
-    background: white;
+    //background: white;
     &>div{
       left:5px;
     }

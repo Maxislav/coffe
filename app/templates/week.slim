@@ -5,4 +5,7 @@ div class="height-100"
 				div class="inline-block"
 					| {{day.date | date:"dd.MM.yyyy"}}
 			div class="time-container height-100"
-				div ng-class="{current: day.current}"
+				div ng-class="{current: day.current}" c-day="day" class="relative"
+					div ng-repeat="time in day.times" class="absolute" c-mission="time"
+						div class="mission"
+							|{{time.title}}

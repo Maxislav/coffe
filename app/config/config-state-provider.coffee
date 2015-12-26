@@ -4,17 +4,17 @@ angular.module('app')
 
     $urlRouterProvider
     .otherwise( ($injector, $location) ->
-           'main/0/week'
+           'main/week/0'
     );
 
     $stateProvider
     .state( "main", {
-          url: "/main/:week",
+          url: "/main",
           templateUrl: 'build/templates/main-block.html',
           controller: 'mainBlockControl'
         } )
     .state('main.week', {
-          url: '/week',
+          url: '/:week',
           views: {
             main: {
               templateUrl: 'build/templates/week.html',

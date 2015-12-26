@@ -25,7 +25,8 @@ angular.module('app').factory 'factoryWeek', ->
     while i < 7
       days.push {
         date:getDate(day+(7*n)),
-        current: day+(7*n) == 0
+        current: day+(7*n) == 0,
+        times: []
       }
       day++
       i++

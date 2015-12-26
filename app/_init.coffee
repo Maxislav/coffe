@@ -1,2 +1,3 @@
 angular.module('app', ['ngAnimate',
-                       'ui.router'])
+                       'ui.router',
+                       'lv.dialog'])

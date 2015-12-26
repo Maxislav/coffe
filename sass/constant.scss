@@ -1,16 +1,20 @@
 $color-border: #c1c1c1;
 $radius-form: 3px;
-$shadow-form: 2px 5px  5px rgba(0,0,0,0.3);
+$shadow-form: 1px 2px  5px rgba(0,0,0,0.3);
 $color-button: white;
 $color-background-day: rgb(252, 255, 230);
+$font-family: Geneva, Arial, Helvetica, sans-serif;
 
 .text-right{
   text-align: right;
 }
+.text-left{
+  text-align: left;
+}
 .select{
   color: darkred;
 }
-.button{
+button, .button{
   padding: 8px 15px;
   border: 1px solid $color-border;
   border-radius: $radius-form;
@@ -47,6 +51,7 @@ $color-background-day: rgb(252, 255, 230);
   float: right;
 }
 
+
 .border{
   border: 2px solid $color-border;
 }
@@ -60,4 +65,7 @@ $color-background-day: rgb(252, 255, 230);
   position: absolute;
   left: 0;
   top: 0;
+}
+.row{
+  margin-bottom: 15px;
 }

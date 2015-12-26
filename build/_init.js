@@ -1,1 +1,1 @@
-angular.module('app', ['ngAnimate', 'ui.router']);
+angular.module('app', ['ngAnimate', 'ui.router', 'lv.dialog']);

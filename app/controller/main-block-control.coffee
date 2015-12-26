@@ -1,24 +1,23 @@
 angular.module('app')
 .controller 'mainBlockControl', [
-  '$scope',
-  '$stateParams',
-  '$state',
+    '$scope',
+    '$stateParams',
+    '$state',
     'factoryTime',
-  ($scope,
-   $stateParams,
-   $state,
-   factoryTime) ->
-    $scope.next = ()->
-      $stateParams.week++
-      $state.go('main.week', $stateParams)
+    ($scope, $stateParams, $state, factoryTime) ->
+      week = null
 
-    $scope.prev = ()->
-      $stateParams.week--
-      $state.go('main.week', $stateParams)
+      $scope.next = ()->
+        week++
+        $state.go('main.week', {week: week})
 
+      $scope.prev = ()->
+        week--
+        $state.go('main.week', {week: week})
 
-    $scope.times = factoryTime.times
-    return
+      $scope.setWeek = (val)->
+        week = val
 
-
-]
+      $scope.times = factoryTime.times
+      return
+  ]
