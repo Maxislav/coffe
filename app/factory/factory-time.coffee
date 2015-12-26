@@ -10,8 +10,8 @@ angular.module('app')
 
     while i<24
       times.push({
-        value: normalize(i)+".00",
-        index: i
+        index: i,
+        value: normalize(i)+".00"
       })
       i++
 
