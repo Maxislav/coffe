@@ -5,11 +5,34 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
   link: (scope, el, attr, cdsy) ->
 
     from = scope[attr.cMission].from
-    perc = parseFloat(from)*100/24
+    perc = null
+    setTop = (val)->
+      perc = parseFloat(val || from)*100/24
+      el.css('top', Math.round(perc*100)/100 + '%' )
+    setTop()
 
-    #console.log Math.round(perc*100)/100
+    mission = scope[attr.cMission]
 
-    el.css('top', Math.round(perc*100)/100 + '%' )
+    scope.$watch (->
+      scope[attr.cMission].from
+    ), (val, oldVal) ->
+      if val!=oldVal
+        setTop(val)
+
+    update = (m1, m2)->
+      for opt of m2
+        m1[opt] = m2[opt]
+
+    save = (obj)->
+      missions = factoryLocalStorage.getMissions()[mission.dayDate].times
+      i = 0
+      while i<missions.length
+        if missions[i] == mission
+          console.log 'find'
+          update missions[i], obj
+        i++
+      factoryLocalStorage.setStorage(cdsy.getDay())
+      return
 
     dialogShow = ()->
       content = angular.copy(scope[attr.cMission])
@@ -23,8 +46,6 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
             text: 'OK'
             action: (d)->
               save
-                dayDate: scope[attr.cDay].date.getTime()
-                dayDateString: $filter('date')(scope[attr.cDay].date, 'dd.MM.yyyy')
                 title: this.content.title
                 description: this.content.description
                 from: this.content.from
@@ -32,6 +53,7 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
 
               return
           }
+          {text: 'Del'}
           {text: 'Cancel'}
         ]
       scope.$apply();

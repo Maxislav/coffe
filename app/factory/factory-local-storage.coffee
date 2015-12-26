@@ -4,7 +4,7 @@ angular.module('app')
   missions = null
 
   setStorage = (obj)->
-    console.log(obj)
+    #console.log(obj)
     missions[obj.date.getTime()] = missions[obj.date.getTime()] || {}
     missions[obj.date.getTime()].times = obj.times
     localStorageService.set('missions',angular.fromJson(missions))
@@ -14,7 +14,7 @@ angular.module('app')
     return
 
   getMissions = ()->
-    missions = localStorageService.get('missions') || {}
+    missions = missions || localStorageService.get('missions') || {}
 
 
   {

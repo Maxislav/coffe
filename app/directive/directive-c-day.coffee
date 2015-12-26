@@ -5,7 +5,8 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
   controller: ($scope) ->
     this.getDate = ()->
       $scope.day.date
-
+    this.getDay = ()->
+      $scope.day
     return
   link: (scope, el, attr) ->
 

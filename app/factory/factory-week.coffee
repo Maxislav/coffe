@@ -39,7 +39,6 @@ angular.module('app').factory 'factoryWeek',(factoryLocalStorage) ->
       }
       day++
       i++
-    console.log ( days)
     weeks[n]=days
 
 
