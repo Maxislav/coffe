@@ -6,13 +6,7 @@ angular.module('app')
   ($scope,
    $stateParams,
    $state) ->
-    $scope.next = ()->
-      $stateParams.week++
-      $state.go('main.week', $stateParams)
-      console.log($stateParams)
-
-    $scope.prev = ()->
-      console.log('prev')
-      undefined
+    $scope.week = $stateParams.week
+    console.log($stateParams.week)
 
 ]
