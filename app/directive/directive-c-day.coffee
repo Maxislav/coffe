@@ -7,10 +7,9 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
       $scope.day.date
     this.getDay = ()->
       $scope.day
-    return
+    this
   link: (scope, el, attr) ->
 
-#times = scope.cDay.times
     times = scope[attr.cDay].times
 
     save = (obj)->
@@ -35,7 +34,7 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
         return
       serviceDialog.add
         templateUrl: 'build/templates/dialog/dialog-base.html'
-        title: 'Создать событие'
+        title: 'Create event'
         content: {
           description: '',
           title: ''
@@ -46,7 +45,7 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
         buttons: [
           {
             class: 'primary'
-            text: 'OK'
+            text: 'Ok'
             action: (d)->
               save
                 dayDate: scope[attr.cDay].date.getTime()

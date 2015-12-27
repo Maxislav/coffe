@@ -8,9 +8,6 @@ var gutil = require('gulp-util');
 var slim = require("gulp-slim");
 require('gulp-grunt')(gulp);
 
-
-
-
 gulp.task('coffee', function() {
     gulp.src(['app/*.coffee', 'app/**/*.coffee'])
         .pipe(coffee({bare: true}).on('error', gutil.log))
@@ -46,8 +43,6 @@ gulp.task('slim:watch', function () {
         'index.slim'
     ], ['grunt-slim']);
 });
-
-
 
 gulp.task('default', ['grunt-tags'], function(){
     gulp.run('coffee', 'grunt-slim', 'sass', 'sass:watch', 'slim:watch', 'coffee:watch');

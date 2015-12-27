@@ -54,12 +54,12 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
       content = angular.copy(scope[attr.cMission])
       serviceDialog.add
         templateUrl: 'build/templates/dialog/dialog-base.html'
-        title: 'Редактировать событие'
+        title: 'Edit event'
         content: content
         buttons: [
           {
             class: 'primary'
-            text: 'OK'
+            text: 'Apply'
             action: ( )->
               save
                 title: this.content.title
@@ -70,7 +70,7 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
               return
           }
           {
-            text: 'Del'
+            text: 'Delete'
             action: ()->
               _remove()
 

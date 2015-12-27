@@ -50,4 +50,4 @@ module.exports = function (grunt) {
     });
     grunt.loadNpmTasks('grunt-script-link-tags');
     grunt.loadNpmTasks('grunt-slim');
-}
+};
