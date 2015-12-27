@@ -1,7 +1,17 @@
 .anim-in-out {
-  &.anim-out{
+  &.anim-out, &.anim-in{
     position: absolute;
-    top: 0;
+    top:0;
     width: 100%;
   }
 }
+.anim-in.anim-slide{
+  &.ng-enter{
+    opacity: 0;
+    &.ng-enter-active{
+      opacity: 1;
+    }
+  }
+}
+
+

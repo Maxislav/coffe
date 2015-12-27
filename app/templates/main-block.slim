@@ -18,6 +18,8 @@ div class="week"
 							div ng-repeat="time in times" class="absolute" style="top: {{time.index*100/24 + '%'}}"
 								| {{time.value}}
 
-					div class="table-cell border height-100 width-100"
-						div class="relative height-100"
-							div ui-view="main" class="anim-in-out anim-fade height-100" data-anim-speed="222"
+					div class="table-cell  height-100 width-100"
+						div style="overflow: hidden;" class="height-100"
+							div style="margin-top:15px" class="height-100"
+								div class="relative height-100 border"
+									div ui-view="main" class="anim-in-out anim-slide height-100 anim-fade" data-anim-sync="true" data-anim-speed="500"

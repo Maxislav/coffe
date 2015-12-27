@@ -94,10 +94,15 @@ button, .button {
       .dialogs-container > div > div .buttons-container button {
         margin: 5px; }
 
-.anim-in-out.anim-out {
+.anim-in-out.anim-out, .anim-in-out.anim-in {
   position: absolute;
   top: 0;
   width: 100%; }
+
+.anim-in.anim-slide.ng-enter {
+  opacity: 0; }
+  .anim-in.anim-slide.ng-enter.ng-enter-active {
+    opacity: 1; }
 
 * {
   margin: 0;
