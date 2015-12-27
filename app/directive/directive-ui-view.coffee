@@ -14,14 +14,12 @@ angular.module('app')
       , (val)->
         if week==null
           week = val
-          console.log('none')
         else if week < parseInt(val)
           el.removeClass('anim-slide-right')
           el.addClass('anim-slide-left')
         else
           el.removeClass('anim-slide-left')
           el.addClass('anim-slide-right')
-          console.log('down')
         week = val
         return
 
