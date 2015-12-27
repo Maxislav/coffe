@@ -80,7 +80,7 @@ input, textarea{
   }
 }
 .container-buttons{
-  margin-bottom: 30px;
+
 }
 .day-title.current {
   color: #ff6100;
@@ -94,5 +94,8 @@ input, textarea{
     &>div{
       left:5px;
     }
+  }
+  .time-in-times{
+    padding: 5px;
   }
 }

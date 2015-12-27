@@ -169,9 +169,6 @@ input, textarea {
     .week .time-container .time-in-day {
       width: 100%; }
 
-.container-buttons {
-  margin-bottom: 30px; }
-
 .day-title.current {
   color: #ff6100; }
 
@@ -181,3 +178,5 @@ input, textarea {
     height: 100%; }
     .times > div > div {
       left: 5px; }
+  .times .time-in-times {
+    padding: 5px; }

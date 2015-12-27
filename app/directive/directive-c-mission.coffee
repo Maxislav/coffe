@@ -42,12 +42,10 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
       while i<missions.length
         if missions[i] == mission
            missions.splice(i, 1)
-        break
+           break
         i++
       factoryLocalStorage.setStorage(cdsy.getDay())
       null
-
-
 
 
     dialogShow = ()->
