@@ -27,7 +27,7 @@ angular.module('app').factory 'factoryWeek',(factoryLocalStorage) ->
     i = undefined
     d = new Date()
     day = d.getDay()
-    day = if day then day  else 6;
+    day = if day then day  else 7;
     day = -day+1
     days = []
     i = 0

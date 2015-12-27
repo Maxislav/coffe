@@ -4,7 +4,8 @@ angular.module('app')
     '$stateParams',
     '$state',
     'factoryTime',
-    ($scope, $stateParams, $state, factoryTime) ->
+    '$rootScope'
+    ($scope, $stateParams, $state, factoryTime, $rootScope) ->
       week = null
 
       $scope.next = ()->

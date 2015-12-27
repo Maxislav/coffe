@@ -27,10 +27,12 @@ module.exports = function (grunt) {
                     'bower_components/angular-ui-router/release/angular-ui-router.min.js',
                     'bower_components/angular-animate/angular-animate.min.js',
                     'bower_components/angular-local-storage/dist/angular-local-storage.min.js',
+                    'bower_components/angular-ui-router-anim-in-out/anim-in-out.js',
                     'build/**/*.js',
                     'module/**/_*.js',
                     'module/**/*.js',
-                    'build/*.css'
+                    'build/*.css',
+                    'bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css'
                 ],
                 options: {
                     openTag: '/ start auto template tags',
