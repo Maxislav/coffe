@@ -1,9 +1,8 @@
 angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog) ->
   {
   restrict: 'A',
-  require: '?^cDay'
+  require: '^cDay'
   link: (scope, el, attr, cdsy) ->
-
     from = scope[attr.cMission].from
     perc = null
     setTop = (val)->
@@ -23,16 +22,33 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
       for opt of m2
         m1[opt] = m2[opt]
 
-    save = (obj)->
+    getMission = (mission)->
       missions = factoryLocalStorage.getMissions()[mission.dayDate].times
       i = 0
       while i<missions.length
         if missions[i] == mission
-          console.log 'find'
-          update missions[i], obj
+          return missions[i]
         i++
+      null
+
+    save = (obj)->
+      update(getMission(mission), obj)
       factoryLocalStorage.setStorage(cdsy.getDay())
       return
+
+    _remove = ()->
+      missions = factoryLocalStorage.getMissions()[mission.dayDate].times
+      i = 0
+      while i<missions.length
+        if missions[i] == mission
+           missions.splice(i, 1)
+        break
+        i++
+      factoryLocalStorage.setStorage(cdsy.getDay())
+      null
+
+
+
 
     dialogShow = ()->
       content = angular.copy(scope[attr.cMission])
@@ -44,7 +60,7 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
           {
             class: 'primary'
             text: 'OK'
-            action: (d)->
+            action: ( )->
               save
                 title: this.content.title
                 description: this.content.description
@@ -53,7 +69,12 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
 
               return
           }
-          {text: 'Del'}
+          {
+            text: 'Del'
+            action: ()->
+              _remove()
+
+          }
           {text: 'Cancel'}
         ]
       scope.$apply();
