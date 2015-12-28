@@ -51,10 +51,9 @@ input, textarea{
         border-radius: $radius-form;
         box-shadow: 0 0 2px white;
         box-shadow: $shadow-form;
+        font-size: 12px;
       }
-     /* &.current>div{
-        background-color: $color-background-day;
-      }*/
+
     }
     .mission{
       min-height: 20px;

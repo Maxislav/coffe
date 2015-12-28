@@ -38,7 +38,10 @@ module.exports = function (grunt) {
                     'bower_components/angular-animate/angular-animate.min.js',
                     'bower_components/angular-local-storage/dist/angular-local-storage.min.js',
                     'bower_components/angular-ui-router-anim-in-out/anim-in-out.js',
+
                     'build/**/*.js',
+                    '!build/templates/templates.js',
+
                     'module/**/_*.js',
                     'module/**/*.js',
                     'build/*.css',
