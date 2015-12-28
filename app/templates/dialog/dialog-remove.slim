@@ -1,0 +1,10 @@
+.dialog-alert dialog-block=""
+	form name="missionForm"
+		.title
+			| {{title}}
+		.content
+		  	div class="text-center"
+		  		| {{content}}
+		.buttons-container
+			button.btn.btn-default ng-click="button.action()" ng-repeat="button in buttons  track by $index" ng-disabled="{{button.disabled}}"
+				| {{button.text}}
