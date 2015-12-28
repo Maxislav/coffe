@@ -1,18 +1,19 @@
 .dialog-alert dialog-block=""
-	.title
-		| {{title}}
-	.content
-		div class="row from-to-time"
-			table class="width-100"
-				tr
-					td class="text-left"
-						input type="text" style="width: 80px" placeholder="from" ng-model="content.from"
-					td class="text-right"
-						input type="text" style="width: 80px" placeholder="to" ng-model="content.to"
-		div class="row"
-			input type="text" class="width-100" ng-model="content.title"
-		div class="row"
-			textarea class="width-100" ng-model="content.description"
-	.buttons-container
-		button.btn.btn-default ng-click="button.action()" ng-repeat=("button in buttons  track by $index")
-			| {{button.text}}
+	form name="missionForm"
+		.title
+			| {{title}}
+		.content
+			div class="row from-to-time"
+				table class="width-100"
+					tr
+						td class="text-left"
+							input type="text" style="width: 80px" placeholder="from" ng-model="content.from" valid="hour"
+						td class="text-right"
+							input type="text" style="width: 80px" placeholder="to" ng-model="content.to" valid="hour"
+			div class="row"
+				input type="text" class="width-100" ng-model="content.title" valid="defined"
+			div class="row"
+				textarea class="width-100" ng-model="content.description"
+		.buttons-container
+			button.btn.btn-default ng-click="button.action()" ng-repeat="button in buttons  track by $index" ng-disabled="{{button.disabled}}"
+				| {{button.text}}

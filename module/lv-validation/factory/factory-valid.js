@@ -321,5 +321,22 @@ angular.module( 'lv.valid' )
 		} );
 		valid.phone = Phone.valid;
 
+        var Hour = new _validClass();
+		Hour.max = 2;
+        Hour.min = 1;
+		Hour.reforms.push( function ( val ) {
+			val = this.int( val );
+			val = this.cut( val );
+
+            if(23<parseInt(val)){
+                val = '23'
+            }
+
+			return val;
+		} );
+		valid.hour = Hour.valid;
+
+
+
 		return valid;
 	}] );

@@ -45,6 +45,7 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
         buttons: [
           {
             class: 'primary'
+            disabled: 'missionForm.$invalid'
             text: 'Ok'
             action: (d)->
               save

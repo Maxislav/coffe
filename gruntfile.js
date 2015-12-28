@@ -21,7 +21,17 @@ module.exports = function (grunt) {
             }
         },
         tags: {
-            devLogin: {
+            options: {
+                openTag: '/ start auto template tags',
+                closeTag: '/ end auto template tags',
+                linkTemplate: (function () {
+                    return 'link  rel="stylesheet" href="{{ path }} " data-css-type="custom-theme"'
+                }()),
+                scriptTemplate: (function () {
+                    return 'script type="text/javascript" src="{{ path }}"'
+                }())
+            },
+            dev: {
                 src: [
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-ui-router/release/angular-ui-router.min.js',
@@ -34,16 +44,14 @@ module.exports = function (grunt) {
                     'build/*.css',
                     'bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css'
                 ],
-                options: {
-                    openTag: '/ start auto template tags',
-                    closeTag: '/ end auto template tags',
-                    linkTemplate: (function () {
-                        return 'link  rel="stylesheet" href="{{ path }} " data-css-type="custom-theme"'
-                    }()),
-                    scriptTemplate: (function () {
-                        return 'script type="text/javascript" src="{{ path }}"'
-                    }())
-                },
+
+                dest: 'index.slim'
+            },
+            prod: {
+                src: [
+                    'build_prod/app.min.js',
+                    'build_prod/index.min.css'
+                ],
                 dest: 'index.slim'
             }
         }

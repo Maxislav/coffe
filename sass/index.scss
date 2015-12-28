@@ -20,6 +20,12 @@ input, textarea{
   border: 1px solid $color-border;
   border-radius: $radius-form;
 }
+.has-error{
+  input, textarea{
+    border: 1px solid $color-error;
+    box-shadow: $shadow-error;
+  }
+}
 
 
 .week{
@@ -70,12 +76,20 @@ input, textarea{
       height: 100%;
       border-radius: $radius-form;
       box-shadow: 0 0 2px white;
-      /*&.current{
-        background-color: $color-background-day;
-      }*/
+
     }
     .time-in-day{
       width: 100%;
+      overflow: hidden;
+      .title{
+        color: gray;
+        padding: 5px;
+      }
+      &:hover{
+        -ms-transform: scale(1.02); /* IE 9 */
+        -webkit-transform: scale(1.02); /* Safari */
+        transform: scale(1.02);
+      }
     }
   }
 }
@@ -90,12 +104,12 @@ input, textarea{
   padding: 4px;
   &>div{
     height: 100%;
-    //background: white;
     &>div{
       left:5px;
     }
   }
   .time-in-times{
     padding: 5px;
+
   }
 }

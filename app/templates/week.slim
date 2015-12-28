@@ -6,6 +6,8 @@ div class="height-100"
 					| {{day.date | date:"dd.MM.yyyy"}}
 			div class="time-container height-100"
 				div ng-class="{current: day.current}" c-day="day" class="relative"
-					div ng-repeat="time in day.times" class="absolute time-in-day" c-mission="time"
-						div class="mission"
-							|{{time.title}}
+					div ng-repeat="time in day.times" class="absolute time-in-day mission" c-mission="time"
+						div class="title"
+							| {{time.title}}
+						p
+						 	| {{time.description}}
