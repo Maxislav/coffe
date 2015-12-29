@@ -84,11 +84,11 @@ gulp.task('templates', function () {
 
 
 
-gulp.task('default', ['grunt-tags:dev'], function(){
-    gulp.run('coffee', 'grunt-slim', 'sass', 'sass:watch', 'slim:watch', 'coffee:watch');
+gulp.task('default', ['coffee','sass','grunt-tags:dev'], function(){
+    gulp.run('grunt-slim', 'sass:watch', 'slim:watch', 'coffee:watch');
 });
 
 
 gulp.task('prod', ['templates','concat', 'grunt-tags:prod', 'concatCss'], function(){
     gulp.run('grunt-slim')
-})
+});
