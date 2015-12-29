@@ -7,6 +7,8 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
   }
   controller: 'dayControl'
   link: (scope, el, attr) ->
+
+    #проверяем ли мы не нажали на уже созданное событие
     ifNeeded = (target)->
       k=false
       a = (_el)->
@@ -22,6 +24,7 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
     createMission = (e)->
       if !ifNeeded(e.target)
         return
+      #ображаемся к запуску диалога на создание события
       scope.$apply(scope.createEvent(scope.cDay))
 
     el.on 'click', createMission

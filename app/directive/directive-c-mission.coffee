@@ -18,6 +18,7 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
       null
     setHeighTop()
 
+    #следим за изменением времени в случае редактирования
     scope.$watchCollection (->
       [scope.cMission.from
        scope.cMission.to]

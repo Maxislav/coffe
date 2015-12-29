@@ -8,8 +8,8 @@ angular.module('app')
     this.getDay = ()->
       $scope.cDay
 
+    #диалог для создания события
     $scope.createEvent = (day)->
-      console.log 'ddsdsd'
       serviceDialog.add
         templateUrl: 'build/templates/dialog/dialog-base.html'
         title: 'Create event'

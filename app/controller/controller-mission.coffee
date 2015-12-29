@@ -1,7 +1,7 @@
 angular.module('app')
 .controller 'missionControl', ($scope, serviceDialog, factoryDay) ->
     $scope.editEvent = (day, _mission)->
-      mission = angular.copy(_mission)
+      mission = angular.copy(_mission) #разрыв связи для отмены дейсвий
       serviceDialog.add
         templateUrl: 'build/templates/dialog/dialog-base.html'
         title: 'Edit event'
@@ -12,6 +12,7 @@ angular.module('app')
             text: 'Apply'
             disabled: 'missionForm.$invalid'
             action: ()->
+              #копирование параметров
               _mission.title = this.content.title
               _mission.description = this.content.description
               _mission.from = this.content.from
@@ -28,6 +29,7 @@ angular.module('app')
         ]
       null
 
+    #показываем предупреждение перед удалением
     beforeRem = (day, _mission)->
       serviceDialog.add
         templateUrl: 'build/templates/dialog/dialog-remove.html'
@@ -37,11 +39,13 @@ angular.module('app')
           {
             text: 'Delete'
             action: ()->
+              # удаляем и сохроаняем локал стораже
               factoryDay.delMission(day, _mission)
           }
           {
             text: 'Cancel'
             action: ()->
+              #возврат к редактированию
               $scope.editEvent(day, _mission)
           }
         ]
