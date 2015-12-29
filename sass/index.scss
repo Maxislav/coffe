@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 body{
-  background: #d8d8d8;
+  background: white;
   height: 100%;
   font-family: $font-family;
 }
@@ -49,8 +49,7 @@ input, textarea{
         padding: 5px 15px;
         background: white;
         border-radius: $radius-form;
-        box-shadow: 0 0 2px white;
-        box-shadow: $shadow-form;
+
         font-size: 12px;
       }
 
@@ -71,7 +70,6 @@ input, textarea{
   .time-container{
     padding: 2px;
     &>div{
-      background: #f1f1f1;
       height: 100%;
       border-radius: $radius-form;
       box-shadow: 0 0 2px white;
