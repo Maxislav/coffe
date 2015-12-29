@@ -8,15 +8,15 @@ Simple scheduler written in javascript using AngularJS with store data in localS
 
 You need [git](http://git-scm.com/) to clone repository.
 
-Also You must have [node.js][node.js] and its package manager [npm][npm] installed
+Also You must have [node.js](http://nodejs.org) and its package manager [npm](https://www.npmjs.org/) installed
 
-..and [bower][bower] to install dependencies
+..and [bower](http://bower.io) to install dependencies
 
     $ npm install -g bower
 
 ## Install
 
-Clone the repository using [git][git]:
+Clone the repository using [git](http://git-scm.com/):
 
     git clone https://github.com/Maxislav/day-book.git <new-folder-name>
     cd <new-folder-name>
