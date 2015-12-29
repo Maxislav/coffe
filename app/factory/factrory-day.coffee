@@ -26,6 +26,4 @@ angular.module('app')
     editMission : (day)->
       factoryLocalStorage.setStorage(day)
       return
-
-
     }

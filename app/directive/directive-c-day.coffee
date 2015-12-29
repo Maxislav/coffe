@@ -5,14 +5,8 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
     cDay: '=',
     cDayCreate: '='
   }
-  controller: ($scope) ->
-    this.getDate = ()->
-      $scope.cDay.date
-    this.getDay = ()->
-      $scope.cDay
-    this
+  controller: 'dayControl'
   link: (scope, el, attr) ->
-
     ifNeeded = (target)->
       k=false
       a = (_el)->
@@ -28,12 +22,11 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
     createMission = (e)->
       if !ifNeeded(e.target)
         return
-      scope.$apply(scope.cDayCreate(scope.cDay))
+      scope.$apply(scope.createEvent(scope.cDay))
 
     el.on 'click', createMission
     scope.$on '$destroy', ->
       el.off 'click', createMission
       return
     return
-
   }

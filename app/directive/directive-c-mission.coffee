@@ -2,6 +2,7 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
   {
   restrict: 'A',
   require: '^cDay',
+  controller: 'missionControl'
   scope: {
     cMission: '='
     cMissionEdit: '='
@@ -30,7 +31,7 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
       return
 
     editMission = (e)->
-      scope.$apply(scope.cMissionEdit( cdsy.getDay() ,scope.cMission))
+      scope.$apply(scope.editEvent( cdsy.getDay() ,scope.cMission))
 
     el.on 'click', editMission
     scope.$on '$destroy', ->
