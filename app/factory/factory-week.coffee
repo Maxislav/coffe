@@ -21,7 +21,6 @@ angular.module('app').factory 'factoryWeek',(factoryLocalStorage) ->
 
   createWeek = (n) ->
 
-    d = undefined
     day = undefined
     days = undefined
     i = undefined

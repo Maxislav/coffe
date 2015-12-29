@@ -16,6 +16,12 @@
 .time-in-day{
   -webkit-transition: all 500ms;
   transition: all 500ms;
+  &.ng-leave {
+    opacity: 1;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
 }
 
 

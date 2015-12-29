@@ -110,6 +110,10 @@ button, .button {
 .time-in-day {
   -webkit-transition: all 500ms;
   transition: all 500ms; }
+  .time-in-day.ng-leave {
+    opacity: 1; }
+    .time-in-day.ng-leave.ng-leave-active {
+      opacity: 0; }
 
 * {
   margin: 0;

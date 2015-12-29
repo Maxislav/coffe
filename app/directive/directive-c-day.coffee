@@ -1,7 +1,6 @@
 angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $filter) ->
   {
   restrict: 'A'
-# scope: cDay: '='
   scope: {
     cDay: '=',
     cDayCreate: '='
