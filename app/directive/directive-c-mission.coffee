@@ -1,4 +1,4 @@
-angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog) ->
+angular.module('app').directive 'cMission', () ->
   {
   restrict: 'A',
   require: '^cDay',

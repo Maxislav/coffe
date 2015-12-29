@@ -1,4 +1,4 @@
-angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $filter) ->
+angular.module('app').directive 'cDay', () ->
   {
   restrict: 'A'
   scope: {
