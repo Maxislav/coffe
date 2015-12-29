@@ -3,9 +3,9 @@ angular.module('app')
     '$scope',
     '$stateParams',
     '$state',
-    'factoryTime',
+    'constantTimes',
     '$rootScope'
-    ($scope, $stateParams, $state, factoryTime, $rootScope) ->
+    ($scope, $stateParams, $state, constantTimes, $rootScope) ->
       week = null
 
       $scope.next = ()->
@@ -19,6 +19,6 @@ angular.module('app')
       $scope.setWeek = (val)->
         week = val
 
-      $scope.times = factoryTime.times
+      $scope.times = constantTimes
       return
   ]

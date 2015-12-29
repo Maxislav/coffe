@@ -7,16 +7,12 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
     to = scope[attr.cMission].to
     perc = null
     content = null;
-
-    setHeight = () ->
+    setHeighTop = ()->
       el.css('height', (parseInt(to) - parseInt(from)) * 100 / 24 + '%')
-      null
-    setHeight()
-
-    setTop = ()->
       perc = parseFloat(from) * 100 / 24
       el.css('top', Math.round(perc * 100) / 100 + '%')
-    setTop()
+      null
+    setHeighTop()
 
     #setHeight()
     mission = scope[attr.cMission]
@@ -27,12 +23,10 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
     ), (val, oldVal) ->
       if val[0] != oldVal[0]
         from = val[0]
-        setTop()
-        setHeight()
+        setHeighTop()
       if val[1] != oldVal[1]
         to = val[1]
-        setTop()
-        setHeight()
+        setHeighTop()
       return
 
     update = (m1, m2)->
@@ -74,16 +68,19 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
             text: 'Delete'
             action: ()->
               _remove()
-            }
+          }
           {
-           text: 'Cancel'
-           action: ()->
-             dialogShow()
+            text: 'Cancel'
+            action: ()->
+              dialogShow()
           }
         ]
 
     dialogShow = (e)->
       content = content || angular.copy(scope[attr.cMission])
+
+
+
       serviceDialog.add
         templateUrl: 'build/templates/dialog/dialog-base.html'
         title: 'Edit event'
@@ -99,7 +96,6 @@ angular.module('app').directive 'cMission', (factoryLocalStorage, serviceDialog)
                 description: this.content.description
                 from: this.content.from
                 to: this.content.to
-
               return
           }
           {

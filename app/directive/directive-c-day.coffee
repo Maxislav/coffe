@@ -2,20 +2,17 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
   {
   restrict: 'A'
 # scope: cDay: '='
+  scope: {
+    cDay: '=',
+    cDayCreate: '='
+  }
   controller: ($scope) ->
     this.getDate = ()->
-      $scope.day.date
+      $scope.cDay.date
     this.getDay = ()->
-      $scope.day
+      $scope.cDay
     this
   link: (scope, el, attr) ->
-
-    times = scope[attr.cDay].times
-
-    save = (obj)->
-      times.push(obj)
-      factoryLocalStorage.setStorage(scope[attr.cDay])
-      return
 
     ifNeeded = (target)->
       k=false
@@ -29,44 +26,14 @@ angular.module('app').directive 'cDay', (serviceDialog, factoryLocalStorage, $fi
       a(target)
       k
 
-    dialogShow = (e)->
+    createMission = (e)->
       if !ifNeeded(e.target)
         return
-      serviceDialog.add
-        templateUrl: 'build/templates/dialog/dialog-base.html'
-        title: 'Create event'
-        content: {
-          description: '',
-          title: ''
-          from: '',
-          to: ''
-        }
+      scope.$apply(scope.cDayCreate(scope.cDay))
 
-        buttons: [
-          {
-            class: 'primary'
-            disabled: 'missionForm.$invalid'
-            text: 'Ok'
-            action: (d)->
-              save
-                dayDate: scope[attr.cDay].date.getTime()
-                dayDateString: $filter('date')(scope[attr.cDay].date, 'dd.MM.yyyy')
-                title: this.content.title
-                description: this.content.description
-                from: this.content.from
-                to: this.content.to
-
-              return
-          }
-          {text: 'Cancel'}
-        ]
-      scope.$apply();
-      # console.log serviceDialog
-      return
-
-    el.on 'click', dialogShow
+    el.on 'click', createMission
     scope.$on '$destroy', ->
-      el.off 'click', dialogShow
+      el.off 'click', createMission
       return
     return
 

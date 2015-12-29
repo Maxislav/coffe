@@ -10,15 +10,10 @@ angular.module('app')
     localStorageService.set('missions',angular.fromJson(missions))
     return
 
-  editStorage = ()->
-    return
-
   getMissions = ()->
     missions = missions || localStorageService.get('missions') || {}
 
-
   {
   setStorage: setStorage
-  editStorage: editStorage
   getMissions: getMissions
   }
