@@ -1,4 +1,4 @@
-# scheduler
+# day-book
 Simple scheduler written in javascript using AngularJS with store data in localStorage
 
 ## Demo
