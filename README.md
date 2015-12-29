@@ -6,7 +6,7 @@ Simple scheduler written in javascript using AngularJS with store data in localS
 
 ## Prerequisites
 
-You need [git][git] to clone repository.
+You need [git](http://git-scm.com/) to clone repository.
 
 Also You must have [node.js][node.js] and its package manager [npm][npm] installed
 
