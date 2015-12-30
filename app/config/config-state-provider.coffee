@@ -1,11 +1,10 @@
 angular.module('app')
-.config ( $stateProvider, $urlRouterProvider ) ->
+.config ( $stateProvider, $urlRouterProvider, $locationProvider ) ->
 
-
+    #$locationProvider.html5Mode(true)
+    #$locationProvider.hashPrefix('!')
     $urlRouterProvider
-    .otherwise( ($injector, $location) ->
-           'main/0'
-    );
+    .otherwise( 'main/0' );
 
     $stateProvider
     .state( "main", {
