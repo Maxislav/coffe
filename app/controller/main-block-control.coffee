@@ -7,6 +7,11 @@ angular.module('app')
     '$rootScope'
     ($scope, $stateParams, $state, constantTimes, $rootScope) ->
       week = null
+      $scope.year = null;
+
+      setYear = (n)->
+        d = new Date();
+        $scope.year = new Date(d.getFullYear(), d.getMonth(), d.getDate()+(n*7)).getFullYear()
 
       $scope.next = ()->
         week++
@@ -18,6 +23,7 @@ angular.module('app')
 
       $scope.setWeek = (val)->
         week = val
+        setYear(val)
 
       $scope.times = constantTimes
       return

@@ -3,7 +3,7 @@ div class="height-100"
 		div class="height-100 relative"
 			div ng-class="{current: day.current}" class="absolute day-title"
 				div class="inline-block"
-					| {{day.date | date:"dd.MM.yyyy EEE"}}
+					| {{day.date | date:"dd MMMM / EEE"}}
 			div class="time-container height-100"
 				div ng-class="{current: day.current}" c-day="day" c-day-create="createEvent" class="relative"
 					div ng-repeat="time in day.times" class="absolute time-in-day mission" c-mission="time" c-mission-edit="editEvent"
